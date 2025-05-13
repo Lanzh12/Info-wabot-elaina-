@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asisten - Elaina 24/7! ✨</title>
+  <meta name="description" content="Elaina - Your ultimate digital bestie yang bakal bikin hari-harimu makin seru!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://notfound/">
+  <meta property="og:title" content="Elaina - Bestie digital utama Anda">
+  <meta property="og:description" content="Elaina - Bestie digital utama Anda yang Bikin Bikin Hari-Harimu Makin Seru!">
+  <meta property="og:image" content="https://files.catbox.moe/6hnddz.jpg">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --primary: #3b82f6;
+      --primary-light: #60a5fa;
+      --primary-dark: #2563eb;
+      --background: #0f172a;
+      --surface: #1e293b;
+      --surface-light: #334155;
+      --text-primary: #f8fafc;
+      --text-secondary: #e2e8f0;
+      --accent: #818cf8;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --error: #ef4444;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Glassmorphism Effect */
+    .glass {
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    /* Header */
+    header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: var(--transition);
+    }
+    
+    header.scrolled {
+      background: rgba(15, 23, 42, 0.9);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    
+    .logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(to right, var(--text-primary), var(--primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 500px;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+      border: 1px solid var(--primary);
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--surface-light);
+    }
+    
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .profile-image {
+      width: 350px;
+      height: 350px;
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transition: var(--transition);
+    }
+    
+    .profile-image:hover {
+      transform: scale(1.03);
+    }
+    
+    .hero-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(rgba(59, 130, 246, 0.4) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.15;
+      z-index: -1;
+    }
+    
+    /* Features Section */
+    .section {
+      padding: 6rem 2rem;
+      position: relative;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .feature-card {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(59, 130, 246, 0.1);
+      border-radius: 12px;
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+    
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .feature-description {
+      color: var(--text-secondary);
+    }
+    
+    /* Links Section */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .link-card {
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: var(--transition);
+    }
+    
+    .link-card:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      transform: translateX(8px);
+    }
+    
+    .link-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      font-size: 1.25rem;
+    }
+    
+    .link-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .link-title {
+      font-weight: 500;
+    }
+    
+    .link-subtitle {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      opacity: 0.8;
+    }
+    
+    /* Animated Watermark */
+    .watermark-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      overflow: hidden;
+      border-radius: 8px;
+      padding: 8px 12px;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .watermark {
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa, #818cf8, #a5b4fc, #c7d2fe);
+      background-size: 400% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientFlow 8s linear infinite, floatHorizontal 15s ease-in-out infinite alternate;
+    }
+    
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes floatHorizontal {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(10px); }
+    }
+    
+    /* Footer */
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      position: relative;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .hero-text {
+        align-items: center;
+      }
+      
+      .hero-buttons {
+        justify-content: center;
+      }
+      
+      .hero-image {
+        order: -1;
+      }
+      
+      .profile-image {
+        width: 280px;
+        height: 280px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .watermark-container {
+        bottom: 10px;
+        right: 10px;
+        padding: 6px 10px;
+      }
+      
+      .watermark {
+        font-size: 12px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="glass">
+    <a href="#" class="logo">
+      <img src="https://files.catbox.moe/6hnddz.jpg" alt="Elaina ogo">
+      <span>Elaina Asisten</span>
+    </a>
+  </header>
+
+  <!-- Animated Watermark -->
+  <div class="watermark-container glass">
+    <div class="watermark">Asisten Elaina ✨</div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Your Ultimate Digital Bestie</h1>
+        <p class="hero-subtitle">
+          Elaina bakal bikin hari-harimu makin seru dengan berbagai fitur keren! 
+          Dari bikin sticker sampai main game bareng, Elaina selalu siap nemenin kamu 24/7.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://api.whatsapp.com/send/?phone=6285959091338&text=.menu&type=phone_number&app_absent=0" 
+             class="btn btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> Chat Sekarang
+          </a>
+          <a href="#features" class="btn btn-secondary">
+            <i class="fas fa-sparkles"></i> Fitur Unggulan
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://files.catbox.moe/6hnddz.jpg" 
+             alt="Elaina Profile" class="profile-image floating">
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section">
+    <h2 class="section-title">Fitur Keren </h2>
+    <div class="features-grid">
+      <div class="feature-card glass">
+        <div class="feature-icon">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <h3 class="feature-title">Get Started!</h3>
+        <p class="feature-description">
+          Ketik <code>.menu</code> dan mulai petualangan seru bareng bestie virtualmu!
+        </p>
+      </div>
+      
+      <div class="feature-card glass">
+        <div class="feature-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <h3 class="feature-title">All In One</h3>
+        <p class="feature-description">
+          Bikin sticker custom, download TikTok viral, main game bareng - bestie yang ngerti banget sama kalian~
+        </p>
+      </div>
+      
+      <div class="feature-card glass">
+        <div class="feature-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h3 class="feature-title">Always Online</h3>
+        <p class="feature-description">
+          24/7 ready to chat! Gak ada kata ghosting, always there buat nemenin kamuu~
+        </p>
+      </div>
+      
+      <div class="feature-card glass">
+        <div class="feature-icon">
+          <i class="fas fa-fire"></i>
+        </div>
+        <h3 class="feature-title">Unique Features</h3>
+        <p class="feature-description">
+          AI chat yang slay, custom responses yang aesthetic, dan fitur secret yang bikin mutuals auto kepo!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Temukan Elaina di</h2>
+    <div class="links-grid">
+      <a href="https://api.whatsapp.com/send/?phone=6285959091338&text=.menu&type=phone_number&app_absent=0" 
+         class="link-card glass" target="_blank">
+        <div class="link-icon">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="link-text">
+          <span class="link-title">Chat with Elaina</span>
+          <span class="link-subtitle">24/7 Online</span>
+        </div>
+      </a>
+      
+      <a href="https://wa.me/628388810788" class="link-card glass" target="_blank">
+        <div class="link-icon">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="link-text">
+          <span class="link-title">DM Creator</span>
+          <span class="link-subtitle">WhatsApp</span>
+        </div>
+      </a>
+      
+      <a href="https://t.me/yourtelegram" class="link-card glass" target="_blank">
+        <div class="link-icon">
+          <i class="fab fa-telegram"></i>
+        </div>
+        <div class="link-text">
+          <span class="link-title">Creator's Telegram</span>
+          <span class="link-subtitle">@yourtelegram</span>
+        </div>
+      </a>
+      
+      <a href="https://github.com/arasea2/ely-md" class="link-card glass" target="_blank">
+        <div class="link-icon">
+          <i class="fab fa-github"></i>
+        </div>
+        <div class="link-text">
+          <span class="link-title">Source Code</span>
+          <span class="link-subtitle">GitHub</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Elaina - Menemukan Eror Silahkan Hubungi Owner .</p>
+    <p>Made with ❤️ by LamzOffc</p>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    const header = document.querySelector('header');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Animated Watermark Text Variations
+    const watermarkTexts = [
+      "Asisten elaina Digital Bestie ✨",
+      "24/7 Online 💬",
+      "Your Virtual Friend 🤖",
+      "Made with ❤️",
+      "Always Here For You 🫂"
+    ];
+    
+    const watermark = document.querySelector('.watermark');
+    let currentWatermarkIndex = 0;
+    
+    function changeWatermarkText() {
+      watermark.textContent = watermarkTexts[currentWatermarkIndex];
+      currentWatermarkIndex = (currentWatermarkIndex + 1) % watermarkTexts.length;
+      setTimeout(changeWatermarkText, 3000);
+    }
+    
+    // Start changing watermark text
+    setTimeout(changeWatermarkText, 3000);
+    
+    // Optimized animations
+    let lastScrollY = 0;
+    let ticking = false;
+    
+    function updateAnimations() {
+      // Add any animation updates here if needed
+      ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateAnimations);
+        ticking = true;
+      }
+    });
+    
+    // Performance optimization - reduce animations when tab is not visible
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        watermark.style.animationPlayState = 'paused';
+      } else {
+        watermark.style.animationPlayState = 'running';
+      }
+    });
+  </script>
+</body>
+  </html
